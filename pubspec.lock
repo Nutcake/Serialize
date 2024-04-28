@@ -376,9 +376,11 @@ packages:
   sstv_encode:
     dependency: "direct main"
     description:
-      path: "/home/nutcake/IdeaProjects/sstv_encode"
-      relative: false
-    source: path
+      path: "."
+      ref: master
+      resolved-ref: "0da6ec981306d7f7667e320e46a8ac19bbd73741"
+      url: "https://github.com/Nutcake/sstv_encode.git"
+    source: git
     version: "1.0.0"
   stack_trace:
     dependency: transitive

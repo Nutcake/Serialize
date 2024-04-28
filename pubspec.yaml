@@ -41,7 +41,9 @@ dependencies:
   uuid: ^4.4.0
 
   sstv_encode:
-    path: /home/nutcake/IdeaProjects/sstv_encode
+    git:
+      url: https://github.com/Nutcake/sstv_encode.git
+      ref: master
 
 dev_dependencies:
   flutter_test:
