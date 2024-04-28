@@ -1,0 +1,50 @@
+enum BaudRate {
+  baud110,
+  baud300,
+  baud600,
+  baud1200,
+  baud2400,
+  baud4800,
+  baud9600,
+  baud14400,
+  baud19200,
+  baud38400,
+  baud57600,
+  baud115200,
+  baud128000,
+  baud256000;
+
+  int get rate => const {
+        BaudRate.baud110: 110,
+        BaudRate.baud300: 300,
+        BaudRate.baud600: 600,
+        BaudRate.baud1200: 1200,
+        BaudRate.baud2400: 2400,
+        BaudRate.baud4800: 4800,
+        BaudRate.baud9600: 9600,
+        BaudRate.baud14400: 14400,
+        BaudRate.baud19200: 19200,
+        BaudRate.baud38400: 38400,
+        BaudRate.baud57600: 57600,
+        BaudRate.baud115200: 115200,
+        BaudRate.baud128000: 128000,
+        BaudRate.baud256000: 256000,
+      }[this]!;
+
+  static BaudRate? fromValue(int rate) => const {
+        110: BaudRate.baud110,
+        300: BaudRate.baud300,
+        600: BaudRate.baud600,
+        1200: BaudRate.baud1200,
+        2400: BaudRate.baud2400,
+        4800: BaudRate.baud4800,
+        9600: BaudRate.baud9600,
+        14400: BaudRate.baud14400,
+        19200: BaudRate.baud19200,
+        38400: BaudRate.baud38400,
+        57600: BaudRate.baud57600,
+        115200: BaudRate.baud115200,
+        128000: BaudRate.baud128000,
+        256000: BaudRate.baud256000,
+      }[rate];
+}
