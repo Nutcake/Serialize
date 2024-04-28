@@ -61,7 +61,7 @@ class _ImageAudioPlayerState extends State<ImageAudioPlayer> with WidgetsBinding
     }
     _audioFileFuture = Future(() async {
       final robotPcm = await _encoder.robot36(imgDat);
-      final robotWav = await robotPcm.pcmToWav(11025~/2);
+      final robotWav = await robotPcm.pcmToWav(11025 ~/ 2);
       await _audioPlayer.setAudioSource(RawAudioSource(robotWav)).timeout(const Duration(seconds: 2));
       return true;
     });
@@ -69,11 +69,11 @@ class _ImageAudioPlayerState extends State<ImageAudioPlayer> with WidgetsBinding
 
   @override
   Widget build(BuildContext context) => Material(
-    borderRadius: BorderRadius.circular(64),
-    color: Theme.of(context).colorScheme.primaryContainer,
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: StreamBuilder<PlayerState>(
+        borderRadius: BorderRadius.circular(64),
+        color: Theme.of(context).colorScheme.primaryContainer,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: StreamBuilder<PlayerState>(
             stream: _audioPlayer.playerStateStream,
             builder: (context, snapshot) {
               if (snapshot.hasError) {
@@ -185,6 +185,6 @@ class _ImageAudioPlayerState extends State<ImageAudioPlayer> with WidgetsBinding
               );
             },
           ),
-    ),
-  );
+        ),
+      );
 }

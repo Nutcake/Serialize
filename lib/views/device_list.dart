@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "package:serialize/views/device_view.dart";
 import "package:serialize/views/send_view.dart";
 import "package:usb_serial/usb_serial.dart";
 
@@ -70,7 +69,6 @@ class _DeviceListState extends State<DeviceList> {
                   itemCount: devices.length,
                   itemBuilder: (context, index) {
                     final device = devices[index];
-                    bool loading;
                     return StatefulBuilder(
                       builder: (context, iSetState) => Padding(
                         padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
@@ -82,7 +80,6 @@ class _DeviceListState extends State<DeviceList> {
                           child: InkWell(
                             borderRadius: BorderRadius.circular(16),
                             onTap: () async {
-                              iSetState(() => loading = true);
                               UsbPort port;
                               try {
                                 port = await device.create() ?? (throw "Unknown error");
@@ -101,7 +98,6 @@ class _DeviceListState extends State<DeviceList> {
                                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to open USB port\n$e")));
                                 }
                               }
-                              iSetState(() => loading = false);
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(16.0),

@@ -8,28 +8,11 @@ import "package:just_audio/just_audio.dart";
 import "package:serialize/color_selector_button.dart";
 import "package:serialize/extensions.dart";
 import "package:serialize/foohy_api.dart";
+import "package:serialize/models/font_size.dart";
 import "package:serialize/raw_audio_source.dart";
 import "package:serialize/uppercase_input_formatter.dart";
 import "package:sstv_encode/sstv_encode.dart";
 import "package:usb_serial/usb_serial.dart";
-
-enum FontSize {
-  fourteen,
-  twentyFour,
-  fortyEight;
-
-  double get value => {
-        fourteen: 14.0,
-        twentyFour: 24.0,
-        fortyEight: 48.0,
-      }[this]!;
-
-  img.BitmapFont get font => {
-        fourteen: img.arial14,
-        twentyFour: img.arial24,
-        fortyEight: img.arial48,
-      }[this]!;
-}
 
 class SendView extends StatefulWidget {
   const SendView({required this.port, super.key});
@@ -399,7 +382,6 @@ class _SendViewState extends State<SendView> with WidgetsBindingObserver {
                                             await widget.port.setRTS(false);
                                           }
                                         : () async {
-
                                             final color = img.ColorInt8(4)
                                               ..rNormalized = _selectedColor.red / 255
                                               ..gNormalized = _selectedColor.green / 255

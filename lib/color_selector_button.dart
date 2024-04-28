@@ -26,7 +26,10 @@ class ColorSelectorButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(64),
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: Icon(Icons.check, color: selected ? checkColor ?? Colors.black : Colors.transparent,),
+              child: Icon(
+                Icons.check,
+                color: selected ? checkColor ?? Colors.black : Colors.transparent,
+              ),
             ),
           ),
         ),

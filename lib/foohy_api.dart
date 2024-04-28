@@ -26,8 +26,7 @@ class FoohyApi {
       }
     }
     final body = sb.toString().toUpperCase().trim();
-    final response =
-        await post(Uri.parse("https://sstv.foohy.net/upload?algo=color&neos_mid=${const Uuid().v4().replaceAll("-", "")}&neos_id=$userId&utc_off=7200"), body: body, headers: {"Content-Type": "text/plain"});
+    final response = await post(Uri.parse("https://sstv.foohy.net/upload?algo=color&neos_mid=${const Uuid().v4().replaceAll("-", "")}&neos_id=$userId&utc_off=7200"), body: body, headers: {"Content-Type": "text/plain"});
     if (response.statusCode > 299) {
       throw "Request failed with status code ${response.statusCode}: ${response.body}";
     }

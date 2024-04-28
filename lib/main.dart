@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:serialize/views/device_list.dart';
+import "package:flutter/material.dart";
+import "package:serialize/views/device_list.dart";
 
 void main() {
   runApp(const SerializeApp());
@@ -10,14 +10,12 @@ class SerializeApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Serialize',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const DeviceList(),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        title: "Serialize",
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const DeviceList(),
+      );
 }

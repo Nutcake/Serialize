@@ -1,11 +1,11 @@
-import 'dart:async';
-import 'dart:typed_data';
+import "dart:async";
+import "dart:typed_data";
 
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:serialize/models/baud_rate.dart';
-import 'package:serialize/models/parity.dart';
-import 'package:usb_serial/usb_serial.dart';
+import "package:flutter/material.dart";
+import "package:intl/intl.dart";
+import "package:serialize/models/baud_rate.dart";
+import "package:serialize/models/parity.dart";
+import "package:usb_serial/usb_serial.dart";
 
 class DeviceView extends StatefulWidget {
   const DeviceView({required this.deviceName, required this.port, super.key});
@@ -23,7 +23,7 @@ class _DeviceViewState extends State<DeviceView> {
   late UsbPort _port;
   Stream<Uint8List>? _inputStream;
   String _inputData = "";
-  bool _autoScroll = true;
+  final bool _autoScroll = true;
   StreamSubscription? _inputStreamListener;
 
   @override
